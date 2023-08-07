@@ -1,6 +1,6 @@
 # WebGPU odin
 wgpu native bindings for the Odin programming language
-Based on generated results from modified webgpu-native headers using [The Odin Binding Generator](https://github.com/Breush/odin-binding-generator)
+based on generated results from modified webgpu-native headers using [The Odin Binding Generator](https://github.com/Breush/odin-binding-generator)
 
 Idomatic wrappers are added in [wrappers.odin](webgpu/wrappers.odin) for select procededures and a few helper functions are also added in [helpers.odin](webgpu/helpers.odin) - ChainedStruct(Out) constructors `link` and `chain` and a request callback constructor `request_cb`.
 Additionally the subpackage [sdl](webgpu/sdl) contains a procedure for creating a surface from an sdl window.
