@@ -10,4 +10,4 @@ I'm still getting familiar with WebGPU as I work on these bindings so some detai
 # Examples
 A couple simple examples exist in the [examples](examples) folder. 
 
-I also reccomend checking out [LearnWebGPU for C++](https://eliemichel.github.io/LearnWebGPU/index.html) if you are new to programming with native webgpu as the bindings are close enough to the cpp api to still be helpful.
+I also reccomend checking out [LearnWebGPU for C++](https://eliemichel.github.io/LearnWebGPU/index.html) if you are new to programming with native webgpu as the bindings are close enough to the cpp api for it to be helpful.
