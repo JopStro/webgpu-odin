@@ -32,7 +32,7 @@ main :: proc() {
 	assert(sdl2.Init({.VIDEO}) == 0, "Could not initialize sdl")
 	defer sdl2.Quit()
 
-	window := sdl2.CreateWindow("WebGPU Square",  sdl2.WINDOWPOS_CENTERED, sdl2.WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, {})
+	window := sdl2.CreateWindow("WebGPU Square",  sdl2.WINDOWPOS_CENTERED, sdl2.WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, {.HIDDEN})
 	assert(window != nil, "Could not create window")
 	defer sdl2.DestroyWindow(window)
 
@@ -173,7 +173,8 @@ main :: proc() {
 	})
 	defer wgpu.buffer_release(index_buffer)
 	wgpu.queue_write_buffer(queue, index_buffer, 0, index_data)
-
+	
+	sdl2.ShowWindow(window)
 	loop: for {
 		for event: sdl2.Event; sdl2.PollEvent(&event); {
 			#partial switch event.type {

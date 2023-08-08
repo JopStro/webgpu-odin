@@ -21,10 +21,10 @@ main :: proc() {
 		{{+0.0, +0.5}, {0.0, 0.0, 1.0}},
 	}
 
-	assert(sdl2.Init({.VIDEO}) == 0, "Could not initialize sdl")
+	assert(sdl2.Init({.VIDEO}) == 0, string(sdl2.GetError()))
 	defer sdl2.Quit()
 
-	window := sdl2.CreateWindow("WebGPU Triangle",  sdl2.WINDOWPOS_CENTERED, sdl2.WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, {})
+	window := sdl2.CreateWindow("WebGPU Triangle",  sdl2.WINDOWPOS_CENTERED, sdl2.WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, {.HIDDEN})
 	assert(window != nil, "Could not create window")
 	defer sdl2.DestroyWindow(window)
 
@@ -159,7 +159,7 @@ main :: proc() {
 
 	wgpu.queue_write_buffer(queue, vertex_buffer, 0, vertex_data)
 
-
+	sdl2.ShowWindow(window)
 	loop: for {
 		for event: sdl2.Event; sdl2.PollEvent(&event); {
 			#partial switch event.type {
