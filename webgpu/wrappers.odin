@@ -11,13 +11,13 @@ when ODIN_OS == .Linux {
 } else when ODIN_OS == .Windows {
     foreign import wgpu {
         "bin/windows/libwgpu_native.lib",
-        "system:d3dcompiler",
-        "system:bcrypt",
-        "system:lntdll",
-        "system:ws2_32",
-        "system:advapi32",
-        "system:userenv",
-        "system:user32",
+        "system:d3dcompiler.lib",
+        "system:bcrypt.lib",
+        "system:lntdll.lib",
+        "system:ws2_32.lib",
+        "system:advapi32.lib",
+        "system:userenv.lib",
+        "system:user32.lib",
     }
 }
 
