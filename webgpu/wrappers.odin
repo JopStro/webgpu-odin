@@ -3,6 +3,7 @@ package webgpu
 when ODIN_OS == .Linux {
     foreign import wgpu "bin/linux/libwgpu_native.a"
 } else when ODIN_OS == .Darwin {
+    // TODO: Test if mac requires any additional linked libs
     when ODIN_ARCH == .arm64 {
         foreign import wgpu "bin/mac/arm/libwgpu_native.a"
     } else {
