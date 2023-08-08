@@ -11,7 +11,16 @@ when ODIN_OS == .Linux {
         foreign import wgpu "bin/mac/libwgpu_native.a"
     }
 } else when ODIN_OS == .Windows {
-    foreign import wgpu "bin/windows/libwgpu_native.lib"
+    foreign import wgpu {
+        "bin/windows/libwgpu_native.lib",
+        "system:d3dcompiler",
+        "system:bcrypt",
+        "system:lntdll",
+        "system:ws2_32",
+        "system:advapi32",
+        "system:userenv",
+        "system:user32",
+    }
 } else {
     #panic("platform unsupported")
 }
