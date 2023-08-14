@@ -1,3 +1,6 @@
+# ABANDONED
+Use https://github.com/Capati/wgpu-odin instead
+
 # WebGPU odin
 wgpu native bindings for the Odin programming language
 based on generated results from modified WebGPU native headers using [The Odin Binding Generator](https://github.com/Breush/odin-binding-generator)
